@@ -23,6 +23,9 @@
       <li class="nav-item active">
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="/about">AboutUs <span class="sr-only">(current)</span></a>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -46,7 +49,7 @@
     {%load static%}
       <div class="accordion" id="accordionExample">
        {% for id,i,j,k in arr %}
-  <div class="card">
+  <div class="card container">
     <div class="card-header" id={id}>
       <h2 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{id}}" aria-expanded="true" aria-controls="collapse{{id}}">

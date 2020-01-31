@@ -42,6 +42,8 @@ policy_threshold = {
     'user_access':1,
     'policy_change':1}
 
+def about(request):
+    return render(request, 'about.html')
 def index(request):
 
     if request.method == 'POST':
