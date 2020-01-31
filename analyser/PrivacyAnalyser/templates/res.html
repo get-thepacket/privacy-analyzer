@@ -13,7 +13,7 @@
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Privacy Analyser</a>
+  <a class="navbar-brand" href="/">Privacy Analyser</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -21,7 +21,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="/about">AboutUs <span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -32,7 +35,7 @@
 </nav>
     <br/>
     <div class="container" style="margin-top:20px;">
-    <h1>Analized <span class="badge badge-secondary">POLICIES</span></h1>
+    <h1>Analysed <span class="badge badge-secondary">POLICIES</span></h1>
       <hr>
     </div>
 <!--        <div>-->
@@ -46,10 +49,10 @@
     {%load static%}
       <div class="accordion" id="accordionExample">
        {% for id,i,j,k in arr %}
-  <div class="card">
+  <div class="card container">
     <div class="card-header" id={id}>
       <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{id}}" aria-expanded="true" aria-controls="collapse{{id}}">
            {%if j%}
           <strong>
           <font color="red" class="uppercase">{{i}}</font>
@@ -64,7 +67,7 @@
       </h2>
     </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div id="collapse{{id}}" class="collapse show" aria-labelledby="heading{{id}}" data-parent="#accordionExample">
       <div class="card-body">
        {% for j1 in k%}
         {{j1}}
