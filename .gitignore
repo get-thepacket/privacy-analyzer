@@ -4,6 +4,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 .idea/
+analyser/PrivacyAnalyser/models/
 .vscode/
 
 
@@ -132,4 +133,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-analyzer/PrivacyAnalyzer/models
+#analyser/PrivacyAnalyser/models/data_encryption_ADA_policy.pkl
