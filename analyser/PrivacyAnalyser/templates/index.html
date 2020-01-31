@@ -32,10 +32,12 @@
 </nav>
     <br/>
     <div class="container" style="margin-top:20px;">
-    <form method="post" action="/PrivacyAnalyser/form">{% csrf_token %}
+    <form method="post" action="/">
+        {% csrf_token %}
   <div class="form-group">
     <h1>Add Privacy <span class="badge badge-secondary">POLICY</span></h1>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      {% csrf_token %}
+      {{ form }}
   </div>
       <center>
       <button type="submit" class="btn btn-primary">Submit</button>
