@@ -26,19 +26,19 @@ models_to_evaluate = {
 
 model_threshold = {
     'data_encryption' : 0.05,
-    'data_retention': 0.1,
-    'do_not_track': 0.1,
-    'first_party': 0.1,
-    'third_party':0.1,
-    'user_access':0.1,
-    'policy_change':0.1}
+    'data_retention': 0.01,
+    'do_not_track': 0.01,
+    'first_party': 0.3,
+    'third_party':0.16,
+    'user_access':0.05,
+    'policy_change':0.05}
 
 policy_threshold = {
     'data_encryption' : 1,
     'data_retention': 1,
     'do_not_track': 1,
-    'first_party': 4,
-    'third_party':4,
+    'first_party': 5,
+    'third_party':5,
     'user_access':1,
     'policy_change':1}
 
@@ -75,8 +75,6 @@ def index(request):
                 segments[c] = post_process_segments(segments[c])
 
                 bools[c] = results[c] >= policy_threshold[c]
-            segment=[]
-            bool=[]
             arr=[]
             for i in segments:
                 arr.append((i,bools[i],segments[i]))

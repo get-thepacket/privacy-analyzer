@@ -7,7 +7,9 @@
 <body>
     {% for i,j,k in arr %}
     <h1>{{i}} {{j}}</h1>
-    <p>{{k}}</p>
+    {%for j1 in k%}
+        <p>{{j1}}</p>
+    {%endfor%}}
     {%endfor%}
 </body>
 </html>
