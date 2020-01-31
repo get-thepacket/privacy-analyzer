@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render
 from .forms import policy
-from lib.modelpredictors import predict_proba_all_models
-from lib.textprocessors import  text_process_policy, post_process_segments, reverse_paragraph_segmenter
+from .lib.modelpredictors import predict_proba_all_models
+from .lib.textprocessors import  text_process_policy, post_process_segments, reverse_paragraph_segmenter
 import pickle
 import pandas as pd
 
