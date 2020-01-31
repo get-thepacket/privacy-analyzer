@@ -76,8 +76,10 @@ def index(request):
 
                 bools[c] = results[c] >= policy_threshold[c]
             arr=[]
+            count = 1
             for i in segments:
-                arr.append((i,bools[i],segments[i]))
+                arr.append((count,i,bools[i],segments[i]))
+                count+=1
 
             return render(request,'res.html',{'arr':arr})
     return render(request,'index.html', {'form': policy()})

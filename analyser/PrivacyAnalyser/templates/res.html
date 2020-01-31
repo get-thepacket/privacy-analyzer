@@ -1,15 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Privacy Policy</title>
-</head>
-<body>
-    {% for i,j,k in arr %}
-    <h1>{{i}} {{j}}</h1>
-    {%for j1 in k%}
-        <p>{{j1}}</p>
-    {%endfor%}}
-    {%endfor%}
-</body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>HackDoomna</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Privacy Analyser</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+    <br/>
+    <div class="container" style="margin-top:20px;">
+    <h1>Analized <span class="badge badge-secondary">POLICIES</span></h1>
+      <hr>
+    </div>
+<!--        <div>-->
+<!--          {% for id,i,j,k in arr %}-->
+<!--            <h1>{{i}} {{j}}</h1>-->
+<!--            {%for j1 in k%}-->
+<!--              <p>{{j1}}</p>-->
+<!--            {%endfor%}}-->
+<!--          {%endfor%}-->
+<!--        </div>-->
+    {%load static%}
+      <div class="accordion" id="accordionExample">
+       {% for id,i,j,k in arr %}
+  <div class="card">
+    <div class="card-header" id={id}>
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+           {%if j%}
+          <strong>
+          <font color="red" class="uppercase">{{i}}</font>
+          </strong>
+           {%endif%}
+           {%if not j%}
+          <strong>
+          <font color="green" class="uppercase">{{i}}</font>
+          </strong>
+           {%endif%}
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+       {% for j1 in k%}
+        {{j1}}
+        <br>
+        <br>
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+        {%endfor%}
+      </div>
+
+<!-- Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <style>
+.uppercase{
+text-transform:uppercase;
+}
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
 </html>
