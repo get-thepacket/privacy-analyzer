@@ -75,9 +75,11 @@ def index(request):
                 segments[c] = post_process_segments(segments[c])
 
                 bools[c] = results[c] >= policy_threshold[c]
-
+            segment=[]
+            bool=[]
+            arr=[]
             for i in segments:
-                segments[i]='\n'.join(segments[i])
-            #print(bools)
-            return render('res.html',{'bools':bools, 'segments':segments})
+                arr.append((i,bools[i],segments[i]))
+
+            return render(request,'res.html',{'arr':arr})
     return render(request,'index.html', {'form': policy()})
