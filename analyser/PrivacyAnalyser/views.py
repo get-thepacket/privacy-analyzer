@@ -76,5 +76,8 @@ def index(request):
 
                 bools[c] = results[c] >= policy_threshold[c]
 
-            print(segments)
+            for i in segments:
+                segments[i]='\n'.join(segments[i])
+            #print(bools)
+            return render('res.html',{'bools':bools, 'segments':segments})
     return render(request,'index.html', {'form': policy()})
