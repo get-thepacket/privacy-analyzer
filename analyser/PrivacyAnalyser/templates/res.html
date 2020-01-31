@@ -50,7 +50,7 @@
       <div class="accordion" id="accordionExample">
        {% for id,i,j,k in arr %}
   <div class="card container">
-    <div class="card-header" id={id}>
+    <div class="card-header" id={id} >
       <h2 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{id}}" aria-expanded="true" aria-controls="collapse{{id}}">
            {%if j%}
@@ -67,7 +67,7 @@
       </h2>
     </div>
 
-    <div id="collapse{{id}}" class="collapse show" aria-labelledby="heading{{id}}" data-parent="#accordionExample">
+    <div id="collapse{{id}}" class="collapse hide" aria-labelledby="heading{{id}}" data-parent="#accordionExample">
       <div class="card-body">
        {% for j1 in k%}
         {{j1}}
