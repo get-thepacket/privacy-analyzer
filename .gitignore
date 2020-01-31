@@ -4,6 +4,9 @@ __pycache__/
 *$py.class
 .idea/
 .vscode/
+
+analyser/PrivacyAnalyser/models/
+
 # C extensions
 *.so
 
