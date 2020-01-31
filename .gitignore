@@ -1,3 +1,4 @@
+analyser/PrivacyAnalyser/models/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -5,7 +6,7 @@ __pycache__/
 .idea/
 .vscode/
 
-analyser/PrivacyAnalyser/models/
+
 
 # C extensions
 *.so
