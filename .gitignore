@@ -6,8 +6,7 @@ __pycache__/
 .idea/
 analyser/PrivacyAnalyser/models/
 .vscode/
-
-
+models/
 
 # C extensions
 *.so
