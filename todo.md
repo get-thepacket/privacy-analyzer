@@ -1,0 +1,2 @@
+- Read about stemming
+- read about snowball stemming
