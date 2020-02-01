@@ -38,17 +38,10 @@
     <h1>Analysed <span class="badge badge-secondary">POLICIES</span></h1>
       <hr>
     </div>
-<!--        <div>-->
-<!--          {% for id,i,j,k in arr %}-->
-<!--            <h1>{{i}} {{j}}</h1>-->
-<!--            {%for j1 in k%}-->
-<!--              <p>{{j1}}</p>-->
-<!--            {%endfor%}}-->
-<!--          {%endfor%}-->
-<!--        </div>-->
+
     {%load static%}
       <div class="accordion" id="accordionExample">
-       {% for id,i,j,k in arr %}
+       {% for id,i,j,k,tgl in arr %}
           {% if  k %}
 
   <div class="card container">

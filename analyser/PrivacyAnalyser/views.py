@@ -43,12 +43,26 @@ policy_threshold = {
     'policy_change':1}
 
 to_change={
-    'first_party':false,
-    'data_encryption':true,
-    'third_party':false,
-    'data_retention':false,
-    'user_access':true,
-    'policy_change':true}
+    'first_party':False,
+    'data_encryption':True,
+    'third_party':False,
+    'data_retention':False,
+    'user_access':True,
+    'policy_change':True,
+    'do_not_track': False
+}
+
+msg={
+    'first_party':'DATA COLLECTION',
+    'data_encryption':'DATA SECURITY',
+    'third_party':"THIRD PARTY DATA SHARING",
+    'data_retention':"DATA RETENTION",
+    'user_access':'USER DATA ACCESS AND DELETION',
+    'policy_change':'POLICY CHANGE',
+    'do_not_track': 'TRACKERS'
+}
+
+
 
 def about(request):
     return render(request, 'about.html')
@@ -85,10 +99,44 @@ def index(request):
                 segments[c] = post_process_segments(segments[c])
 
                 bools[c] = results[c] >= policy_threshold[c]
-            arr=[]
+            for i in bools:
+                if to_change[i]:
+                    bools[i] = not bools[i]
+
+            tagLine={}
+            if bools['data_retention']:
+                tagLine['data_retention'] = "This service keeps your data even after you discontinue using its service"
+            else:
+                tagLine['data_retention'] = "This service does nor keep your data after you discontinue using its service"
+            if bools['data_encryption']:
+                tagLine['data_encryption'] = "This service does not uses encryption to protect your data"
+            else:
+                tagLine['data_encryption'] = "This service  uses encryption to protect your data"
+            if bools['third_party']:
+                tagLine['third_party'] = "Exchanges your data with third party"
+            else:
+                tagLine['third_party'] = "Does not Exchanges your data with third party"
+            if bools['first_party']:
+                tagLine['first_party'] = "This service collects users personal information"
+            else:
+                tagLine['first_party'] = "This service does not collect users personal information"
+            if bools['user_access']:
+                tagLine['user_access'] = "This service does not allows user access to data"
+            else:
+                tagLine['user_access'] = "This service allows user to access and delete data"
+            if bools['do_not_track']:
+                tagLine['do_not_track'] = "This service uses trackers"
+            else:
+                tagLine['do_not_track'] = "This service does not uses trackers"
+            if bools['policy_change']:
+                tagLine['policy_change'] = "This service does not inform users for policy changes"
+            else:
+                tagLine['policy_change'] = "This Service informs users for any policy change"
+            arr = []
+            print(bools)
             count = 1
             for i in segments:
-                arr.append((count,i,bools[i],segments[i]))
+                arr.append((count,msg[i],bools[i],segments[i],tagLine[i]))
                 count+=1
 
             return render(request,'res.html',{'arr':arr})
