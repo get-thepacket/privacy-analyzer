@@ -42,6 +42,14 @@ policy_threshold = {
     'user_access':1,
     'policy_change':1}
 
+to_change={
+    'first_party':false,
+    'data_encryption':true,
+    'third_party':false,
+    'data_retention':false,
+    'user_access':true,
+    'policy_change':true}
+
 def about(request):
     return render(request, 'about.html')
 def index(request):
