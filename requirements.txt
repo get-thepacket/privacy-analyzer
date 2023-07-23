@@ -1,6 +1,6 @@
 django==2.2.7
 numpy
-nltk==3.4.5
+nltk==3.6.6
 bs4==0.0.1
 pandas
 sklearn
